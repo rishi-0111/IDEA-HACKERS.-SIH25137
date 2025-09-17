@@ -1,5 +1,6 @@
 import { CategoryCard } from "./CategoryCard";
 import { Hotel, Utensils, MapPin, Heart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
   {
@@ -29,6 +30,17 @@ const categories = [
 ];
 
 export const Categories = () => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category: string) => {
+    const routes: { [key: string]: string } = {
+      "Hotels": "/hotels",
+      "Restaurants": "/restaurants", 
+      "Attractions": "/attractions",
+      "Emergency": "/emergency"
+    };
+    navigate(routes[category]);
+  };
   return (
     <section className="py-24 bg-gradient-to-b from-background to-secondary/30">
       <div className="container mx-auto px-4">
@@ -49,7 +61,7 @@ export const Categories = () => {
               title={category.title}
               description={category.description}
               color={category.color}
-              onClick={() => console.log(`Navigate to ${category.title}`)}
+              onClick={() => handleCategoryClick(category.title)}
             />
           ))}
         </div>
