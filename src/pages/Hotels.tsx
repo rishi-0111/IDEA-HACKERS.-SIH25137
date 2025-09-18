@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Star, MapPin, Wifi, Car, Coffee, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { FilterDropdown } from "@/components/FilterDropdown";
+import { SortDropdown } from "@/components/SortDropdown";
 
 const hotels = [
   {
@@ -96,6 +99,39 @@ const amenityIcons = {
 
 export default function Hotels() {
   const navigate = useNavigate();
+  const [selectedFilters, setSelectedFilters] = useState<Record<string, string[]>>({});
+  const [currentSort, setCurrentSort] = useState('rating-desc');
+
+  const handleFilterChange = (filterType: string, value: string) => {
+    setSelectedFilters(prev => {
+      const currentFilters = prev[filterType] || [];
+      const isSelected = currentFilters.includes(value);
+      
+      if (isSelected) {
+        return {
+          ...prev,
+          [filterType]: currentFilters.filter(f => f !== value)
+        };
+      } else {
+        return {
+          ...prev,
+          [filterType]: [...currentFilters, value]
+        };
+      }
+    });
+  };
+
+  const handleSortChange = (sortBy: string) => {
+    setCurrentSort(sortBy);
+  };
+
+  const sortOptions = [
+    { label: 'Price: Low to High', value: 'price-asc' },
+    { label: 'Price: High to Low', value: 'price-desc' },
+    { label: 'Rating: Highest First', value: 'rating-desc' },
+    { label: 'Rating: Lowest First', value: 'rating-asc' },
+    { label: 'Distance: Nearest First', value: 'distance-asc' },
+  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -126,9 +162,27 @@ export default function Hotels() {
             <div>
               <p className="text-muted-foreground">Found {hotels.length} hotels</p>
             </div>
-            <div className="flex gap-2">
-              <Button variant="outline" size="sm">Sort by Price</Button>
-              <Button variant="outline" size="sm">Filter</Button>
+            <div className="flex gap-2 flex-wrap">
+              <SortDropdown 
+                onSortChange={handleSortChange}
+                currentSort={currentSort}
+                options={sortOptions}
+              />
+              <FilterDropdown 
+                type="price"
+                onFilterChange={handleFilterChange}
+                selectedFilters={selectedFilters}
+              />
+              <FilterDropdown 
+                type="distance"
+                onFilterChange={handleFilterChange}
+                selectedFilters={selectedFilters}
+              />
+              <FilterDropdown 
+                type="rating"
+                onFilterChange={handleFilterChange}
+                selectedFilters={selectedFilters}
+              />
             </div>
           </div>
         </div>
