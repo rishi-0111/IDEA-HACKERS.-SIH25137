@@ -99,9 +99,9 @@ By combining AI, Blockchain, and Geofencing, the platform provides real-time rec
  📌 Roadmap
 - [x] MVP with verified guides & homestays.
 - [x] AI-powered recommendations & Hidden Gems.
-- [ ] Multi-language support.
-- [ ] AR/VR-based immersive tours.
-- [ ] Expansion to international destinations.
+- [x] Multi-language support.
+- [x] bookings
+- [x] authority dashboard
 
 ---
 
