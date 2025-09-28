@@ -1,73 +1,116 @@
-# Welcome to your Lovable project
+ AI-Powered Tourism Platform
 
-## Project info
+🚀 Overview
+The AI-Powered Tourism Platform is a smart digital ecosystem designed to make tourism smarter, safer, and more inclusive**. It connects tourists with verified guides, homestays, transport, and artisans while ensuring safety, personalization, and transparency.
 
-**URL**: https://lovable.dev/projects/602b110f-bf80-4fa6-880b-c0e6b63ee1c1
+By combining AI, Blockchain, and Geofencing, the platform provides real-time recommendations, secure bookings, hidden attractions, and trusted services — while empowering local communities.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+✨ Features
 
-**Use Lovable**
+ 👤 Tourist Side (Mobile App)
+- 📍 Smart Navigation– AI suggests safe routes & live alerts.
+- 🛏️ Bookings – Hotels, homestays, transport, and guides.
+- 🛍️ Local Artisans – Marketplace to buy authentic local crafts.
+- 📸 Events & Attractions – Personalized itineraries for travelers.
+- 🏞️ Hidden Gems – AI + local insights reveal lesser-known, must-visit spots.
+- 🚨 Emergency SOS – One-tap emergency alert to nearby authorities.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/602b110f-bf80-4fa6-880b-c0e6b63ee1c1) and start prompting.
+🛡️ Admin / Authority Side (Web Dashboard)
+- 🧾 KYC Verification – Blockchain-backed onboarding of guides, homestays & artisans.
+- 🔒 Security Dashboard – Real-time unsafe zone alerts, route deviations, and suspicious activity logs.
+- 📊 Tourism Analytics– Monitor tourist flow, bookings, and regional trends.
+- 🛡️ Audit Trail – Immutable records stored on blockchain for trust & compliance.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+ 🏗️ System Architecture
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Frontend
+   - React.js → Admin & Security Dashboard
+   - React Native → Mobile Tourist App
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. Backend (Node.js + Express APIs)
+   - Authentication, bookings, alerts, AI recommendations.
+   - Bridges mobile app ↔ blockchain ↔ AI modules.
 
-Follow these steps:
+3. Blockchain (Hyperledger Fabric)
+   - Verified identities of guides, artisans, and homestays.
+   - Smart contracts for bookings & transactions.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+4. Storage
+   - MongoDB→ User profiles, itineraries, analytics.
+   - IPFS → Certificates, media, large files.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+5. AI/ML & Safety
+   - CNN + SAFA → Detect unsafe zones & unusual movement.
+   - Recommendation Engine → Suggests attractions, events, hidden gems.
+   - Geo-Fencing → Real-time route monitoring for tourist safety.
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+ 🛠️ Tech Stack
 
-**Edit a file directly in GitHub**
+- Frontend: React.js, React Native
+- Backend: Node.js, Express.js
+- Blockchain: Hyperledger Fabric (Smart Contracts)
+- Database: MongoDB, IPFS
+- AI/ML: Python (CNN, SAFA, Recommendation Engine)
+- DevOps: Docker, Kubernetes, CI/CD
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+⚙️ Installation & Setup
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. Clone the repo
+   ```bash
+   git clone https://github.com/your-username/tourism-platform.git
+   cd tourism-platform
+   ```
 
-## What technologies are used for this project?
+2. Backend Setup
+   ```bash
+   cd backend
+   npm install
+   npm start
+   ```
 
-This project is built with:
+3. Frontend Setup
+   ```bash
+   cd frontend
+   npm install
+   npm start
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+4. Blockchain Setup
+   - Configure Hyperledger Fabric network.
+   - Deploy smart contracts in `/blockchain/contracts/`.
 
-## How can I deploy this project?
+5. AI/ML Services
+   ```bash
+   cd ai-services
+   pip install -r requirements.txt
+   python main.py
+   ```
 
-Simply open [Lovable](https://lovable.dev/projects/602b110f-bf80-4fa6-880b-c0e6b63ee1c1) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+ 📌 Roadmap
+- [x] MVP with verified guides & homestays.
+- [x] AI-powered recommendations & Hidden Gems.
+- [x] Multi-language support.
+- [x] bookings
+- [x] authority dashboard
 
-Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+ 🤝 Contributing
+We welcome contributions!
+1. Fork the repo
+2. Create a new branch (`feature-xyz`)
+3. Commit your changes
+4. Push & open a Pull Request
+
+---
